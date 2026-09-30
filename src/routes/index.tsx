@@ -19,13 +19,17 @@ import {
   Gauge,
   MessageCircle,
   ThumbsUp,
+  Headset,
+  Eye,
+  TrendingUp,
+  Handshake,
 } from "lucide-react";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-import fon from "@/assets/fonnik.jpg";
+import fon from "@/assets/fonneta.webp";
 import otziv1 from "@/assets/otziv1.jpg";
-import otziv2 from "@/assets/otziv2.jpg";
+import otziv2 from "@/assets/otziv22.jpg";
 import otziv3 from "@/assets/otziv3.jpg";
 import otziv4 from "@/assets/otziv4.jpg";
 import otziv5 from "@/assets/otziv5.jpg";
@@ -45,118 +49,106 @@ import polo from "@/assets/polo.jpg";
 import audi from "@/assets/AudiA6.jpg";
 import fordFocus from "@/assets/geely.jpg";
 
+import chetyrka from "@/assets/chetyrka.jpg";
+import benzcls from "@/assets/benzcls.jpg";
+import suzuki from "@/assets/suzuki.jpg";
+import pikanto from "@/assets/pikanto.jpg";
+import granta from "@/assets/granta.jpg";
+import kiario3 from "@/assets/kiario3.jpg";
+import vaz21 from "@/assets/vaz21.jpg";
+import camry40 from "@/assets/camry40.jpg";
+import niva from "@/assets/niva.jpg";
+import dodge from "@/assets/dodge.jpg";
+import mitsubi from "@/assets/mitsubi.jpg";
+
 const cars = [
-  {
-    img: toyotaCamry,
-    images: [toyotaCamry, toyotaCamry2, toyotaCrown],
-    title: "Toyota Camry",
-    year: 2013,
-    specs: "2.5 AT, 85 т.км, идеальное состояние, 1 владелец",
-    price: "1 910 000 ₽",
+    {
+    img: mitsubi,
+    images: [mitsubi, mitsubi, mitsubi],
+    title: "Mitsubishi",
+    year: 2006,
+    specs: "3.0 AT, полный привод",
+    price: "599 000 ₽",
   },
   {
-    img: hyundaiCreta,
-    images: [hyundaiCreta, vwTiguan, polo],
-    title: "Hyundai Creta",
-    year: 2020,
-    specs: "2.0 AT, 4WD, 52 т.км, отличное состояние",
-    price: "2 050 000 ₽",
-  },
-  {
-    img: vwTiguan,
-    images: [vwTiguan, hyundaiCreta, vwPassat],
-    title: "Volkswagen Tiguan",
-    year: 2020,
-    specs: "1.4 TSI AT, 4WD, 95 т.км, на ходу, окрасы, следы кузовного ремонта",
-    price: "2 150 000 ₽",
-  },
-  {
-    img: toyotaCrown,
-    images: [toyotaCrown, toyotaCamry, toyotaCamry2],
-    title: "Toyota Crown",
-    year: 2018,
-    specs: "2.5 AT гибрид, 4WD, 140 т.км, правый руль, на ходу, требуется косметический ремонт",
-    price: "2 600 000 ₽",
-  },
-  {
-    img: toyotaPrado,
-    images: [toyotaPrado, vwTiguan, hyundaiCreta],
-    title: "Toyota Land Cruiser Prado",
-    year: 2007,
-    specs: "4.0 AT, 4WD, 180 т.км, рамный внедорожник, без ДТП, второй владелец, отличное состояние",
-    price: "2 250 000 ₽",
-  },
-  {
-    img: fordFocus,
-    images: [fordFocus, geely, polo],
-    title: "Geely Coolray",
-    year: 2022,
-    specs: "1.5 AMT, 43 т.км, один владелец, отличное состояние, без ДТП",
-    price: "1 575 000 ₽",
-  },
-  {
-    img: vwPassat,
-    images: [vwPassat, vwTiguan, audi],
-    title: "Volkswagen Passat",
-    year: 2010,
-    specs: "1.8 TSI DSG, 235 т.км, сделан капитальный ремонт двигателя, ухоженный салон, присутствуют сколы по кузову, следы небольшого ДТП",
-    price: "680 000 ₽",
-  },
-  {
-    img: peugeot308,
-    images: [peugeot308, renaultLogan, polo],
-    title: "Peugeot 308",
-    year: 2012,
-    specs: "1.6 AT, 130 т.км, хорошее техническое состояние, требуется косметический ремонт",
-    price: "630 000 ₽",
-  },
-  {
-    img: renaultLogan,
-    images: [renaultLogan, peugeot308, polo],
-    title: "Renault Logan",
-    year: 2020,
-    specs: "1.6 AT, 44 т.км, автомобиль в залоге у банка, отличное состояние",
-    price: "1 250 000 ₽",
-  },
-  {
-    img: sprinterClassic,
-    images: [sprinterClassic, vwPassat, toyotaPrado],
-    title: "Mercedes-Benz Sprinter Classic",
-    year: 2017,
-    specs: "2.2 дизель MT, 237 т.км, собственник юридическое лицо, хорошее состояние, грузопассажирский цельнометаллический фургон",
-    price: "1 800 000 ₽",
-  },
-  {
-    img: toyotaCamry2,
-    images: [toyotaCamry2, toyotaCamry, toyotaCrown],
-    title: "Toyota Camry",
+    img: dodge,
+    images: [dodge, dodge, dodge],
+    title: "Dodge Grand Caravan",
     year: 2008,
-    specs: "2.4 AT, 178 т.км, после ДТП, не на ходу, максимальная комплектация",
-    price: "600 000 ₽",
+    specs: "3.3 бензин, 178 л.с., 7 мест (полный салон)",
+    price: "555 000 ₽",
   },
   {
-    img: polo,
-    images: [polo, hyundaiCreta, renaultLogan],
-    title: "Volkswagen Polo",
+    img: niva,
+    images: [niva, niva, niva],
+    title: "Chevrolet Niva",
+    year: 2013,
+    specs: "1 собственник, 130 000 км оригинал, в родной краске, сигнализация с автозапуском, зелёная автотека, кондиционер",
+    price: "330 000 ₽",
+  },
+  {
+    img: camry40,
+    images: [camry40, camry40, camry40],
+    title: "Toyota Camry 40",
+    year: 2006,
+    specs: "2.4 AT, родной пробег 250 000 км",
+    price: "540 000 ₽",
+  },
+  {
+    img: vaz21,
+    images: [vaz21, vaz21, vaz21],
+    title: "ВАЗ 2107",
+    year: 2005,
+    specs: "1 хозяин, пробег 65 000 км",
+    price: "100 000 ₽",
+  },
+  {
+    img: kiario3,
+    images: [kiario3, kiario3, kiario3],
+    title: "Kia Rio 3",
+    year: 2011,
+    specs: "AT, родной пробег 130 000 км, максимальная комплектация (старт-стоп, бесключевой доступ), гаражное хранение, полностью обслужена, в родном окрасе",
+    price: "500 000 ₽",
+  },
+  {
+    img: granta,
+    images: [granta, granta, granta],
+    title: "Lada Granta",
     year: 2022,
-    specs: "1.6 АТ, 38 т.км, один владелец, идеальное состояние, без ДТП.",
-    price: "1 750 000 ₽",
+    specs: "ЭУР, подъёмники, 2 подушки безопасности, 14 000 км родного пробега",
+    price: "150 000 ₽",
   },
   {
-    img: audi,
-    images: [audi, vwPassat, toyotaCamry],
-    title: "Audi A6",
-    year: 2013,
-    specs: "2.0 CVT, 145 т.км, требуется ремонт КПП, на ходу, повреждения по кузову",
-    price: "1 100 000 ₽",
+    img: pikanto,
+    images: [pikanto, pikanto, pikanto],
+    title: "Kia Picanto",
+    year: 2010,
+    specs: "1.0 МКПП, 2 хозяина, 185 000 км пробега",
+    price: "215 000 ₽",
   },
   {
-    img: geely,
-    images: [geely, fordFocus, renaultLogan],
-    title: "Ford Focus",
+    img: suzuki,
+    images: [suzuki, suzuki, suzuki],
+    title: "Suzuki Grand Vitara",
+    year: 2006,
+    specs: "2.0 механика, полный привод, мотор после полной капиталки (вложено 150 000 ₽), идеальное состояние",
+    price: "450 000 ₽",
+  },
+  {
+    img: benzcls,
+    images: [benzcls, benzcls, benzcls],
+    title: "Mercedes-Benz CLS 218",
     year: 2013,
-    specs: "1.6 AMT, 155 т.км, два владельца, без ДТП, не на ходу, неисправность КПП",
-    price: "650 000 ₽",
+    specs: "3.5 мотор, 306 л.с., чистейшие документы, 5 хозяев, родной пробег 220 000 км",
+    price: "1 300 000 ₽",
+  },
+  {
+    img: chetyrka,
+    images: [chetyrka, chetyrka, chetyrka],
+    title: "ВАЗ 2115",
+    year: 2011,
+    specs: "ПТС оригинал, 1 хозяин",
+    price: "155 000 ₽",
   },
 ];
 
@@ -395,52 +387,102 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground relative">
       {/* Навигация */}
       <nav className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-8 h-16">
-          <Logo />
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <a href="#about" className="hover:text-red-500 transition-colors">Почему мы</a>
-            <a href="#catalog" className="hover:text-red-500 transition-colors">Каталог</a>
-            <a href="#stages" className="hover:text-red-500 transition-colors">Этапы</a>
-            <a href="#reviews" className="hover:text-red-500 transition-colors">Отзывы</a>
-            <a href="#faq" className="hover:text-red-500 transition-colors">Вопросы</a>
-            <a href="#callback" className="hover:text-red-500 transition-colors">Контакты</a>
-          </div>
+        {/* Верхняя инфо-полоска */}
+<div className="hidden md:block border-b border-border bg-secondary/40 text-xs">
+  <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-8 h-9">
+    <div className="flex items-center gap-6 text-muted-foreground">
+      <span className="flex items-center gap-1.5">
+        <MapPin className="h-3.5 w-3.5 text-red-500" />
+        Нижний Новогород, ул. Малышева, 51
+      </span>
+      <span className="flex items-center gap-1.5">
+        <ShieldCheck className="h-3.5 w-3.5 text-red-500" />
+        Работаем 24/7 без выходных
+      </span>
+    </div>
+    <span className="text-muted-foreground">
+      Бесплатная оценка и выезд эксперта
+    </span>
+  </div>
+</div>
 
-          <div className="flex items-center gap-3">
-            <a
-              href="tel:+79221882530"
-              className="hidden md:block text-sm font-bold text-foreground hover:text-red-500 transition-colors whitespace-nowrap"
-            >
-              +7 (922) 188-25-30
-            </a>
-            <a
-              href="https://t.me/+79221882530"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Telegram"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-              </svg>
-            </a>
-            <a
-              href="https://max.app/call/+79221882530"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Макс"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
-            >
-              <img src={max} alt="Макс" className="h-5 w-5 object-contain" />
-            </a>
-          </div>
-        </div>
+{/* Основная навигация */}
+<nav className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
+  <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 md:px-8 h-16">
+    {/* Логотип */}
+    <Logo />
+
+    {/* Меню по центру */}
+    <div className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-secondary/40 px-1.5 py-1">
+      <a href="#about" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+        Почему мы
+      </a>
+      <a href="#catalog" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+        Каталог
+      </a>
+      <a href="#stages" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+        Этапы
+      </a>
+      <a href="#reviews" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+        Отзывы
+      </a>
+      <a href="#faq" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+        Вопросы
+      </a>
+    </div>
+
+    {/* Контакты и иконки */}
+    <div className="flex items-center gap-2">
+      <a
+        href="tel:+79221882530"
+        className="hidden md:flex flex-col items-end leading-tight mr-1"
+      >
+        <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+          Звоните сейчас
+        </span>
+        <span className="text-sm font-bold hover:text-red-500 transition-colors whitespace-nowrap">
+          +7 (922) 188-25-30
+        </span>
+      </a>
+
+      <a
+        href="https://t.me/+79221882530"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Telegram"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+        </svg>
+      </a>
+
+      <a
+        href="https://max.app/call/+79221882530"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Макс"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
+      >
+        <img src={max} alt="Макс" className="h-5 w-5 object-contain" />
+      </a>
+
+      <Button
+        size="sm"
+        className="hidden md:inline-flex bg-red-500 hover:bg-red-600 text-white ml-1"
+        asChild
+      >
+        <a href="#callback">Оставить заявку</a>
+      </Button>
+    </div>
+  </div>
+</nav>
       </nav>
 
       {/* Hero-блок */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-black py-20">
+      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden bg-black pt-32 pb-20 md:pt-30">
         <div className="absolute inset-0 z-0">
-          <img src={fon} alt="Hero background" className="h-full w-full object-cover object-center opacity-70 filter brightness-80" />
+          <img src={fon} alt="Hero background" className="h-full w-full object-cover object-center opacity filter brightness-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-black/40" />
         </div>
 
@@ -535,125 +577,350 @@ function Index() {
       </section>
 
       {/* Этапы выкупа */}
-      <section id="stages" className="border-t border-border bg-secondary/5 py-12 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-8 md:space-y-12">
-          <div className="text-center space-y-3 md:space-y-4">
-            <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-              Простая схема работы
-            </span>
-            <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">Как проходит выкуп</h2>
-            <p className="mx-auto max-w-2xl text-sm md:text-base text-muted-foreground">
-              Всего 4 простых шага от первого контакта до получения денег за ваш автомобиль.
+   
+
+      {/* Почему выбирают нас */}
+{/* ЕДИНЫЙ БЛОК: Условия + Как проходит + Почему выбирают */}
+<section id="about" className="border-t border-border bg-secondary/5 py-14 md:py-24">
+  <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-14 md:space-y-20">
+
+    {/* Общая шапка */}
+    <div className="text-center space-y-3 md:space-y-4 max-w-3xl mx-auto">
+      <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+        Как мы работаем
+      </span>
+      <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">
+        Что и как мы выкупаем
+      </h2>
+      <p className="text-sm md:text-base text-muted-foreground">
+        Продавать машину можно по-разному, но с нами это всегда быстро, честно и удобно.
+        Ниже — условия, схема работы и причины, по которым клиенты выбирают нас.
+      </p>
+    </div>
+
+    {/* Подблок 1 — Условия выкупа (3 колонки) */}
+    <div className="space-y-6 md:space-y-8">
+      <div className="text-center space-y-2">
+        <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
+          Условия выкупа
+        </h3>
+        <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+          Три главных сценария — выберите свой и мы подскажем, как действовать.
+        </p>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        {/* Колонка 1 — Любой возраст и состояние */}
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+              <Car className="h-6 w-6" />
+            </div>
+            <h4 className="font-heading text-lg font-bold">Любой возраст и состояние</h4>
+          </div>
+          <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Автомобили любых годов выпуска — от «свежих» до совсем старых</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Недорогие и «уставшие» — минимального порога по цене нет</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Дорогие — выкупаем до 20 млн ₽</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Хотите узнать цену заранее — назовём по телефону за пару минут</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>ПТС обязателен: без него не выкупаем</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Только легковые: грузовой транспорт не берём</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Дороже 20 млн ₽ — не наш формат</span>
+            </li>
+          </ul>
+          <Button size="sm" className="w-full bg-red-500 hover:bg-red-600 text-white" asChild>
+            <a href="#callback">Узнать потолок цены</a>
+          </Button>
+        </div>
+
+        {/* Колонка 2 — Срочный выкуп */}
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+              <Zap className="h-6 w-6" />
+            </div>
+            <h4 className="font-heading text-lg font-bold">Срочный выкуп</h4>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Расчёт сразу после подписания договора — без ожидания и лишних поездок.
+          </p>
+          <ul className="space-y-2.5 text-sm text-muted-foreground">
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Звоните в любое время: принимаем звонки круглосуточно</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Потолок цены озвучиваем ещё по телефону</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Договор и деньги — на месте, без очередей в ГИБДД</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>30 минут — это рекорд, а не норма</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>При дальнем выезде сделка занимает день</span>
+            </li>
+          </ul>
+          <div className="flex items-end gap-2 pt-2">
+            <span className="font-heading text-5xl font-black text-red-500 leading-none">30</span>
+            <span className="text-sm text-muted-foreground pb-1">минут — наш рекорд</span>
+          </div>
+          <Button size="sm" className="w-full bg-red-500 hover:bg-red-600 text-white" asChild>
+            <a href="#callback">Продать срочно</a>
+          </Button>
+        </div>
+
+        {/* Колонка 3 — Типичная ситуация */}
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+              <MessageCircle className="h-6 w-6" />
+            </div>
+            <h4 className="font-heading text-lg font-bold">Типичная ситуация</h4>
+          </div>
+          <blockquote className="border-l-4 border-red-500 pl-4 text-sm italic text-muted-foreground">
+            «Хочу сменить машину на что-то посвежее, но не готов месяцами возиться с объявлениями и звонками»
+          </blockquote>
+          <p className="text-sm text-muted-foreground">
+            Если вы узнали себя — просто позвоните. Мы приедем, посмотрим машину и назовём реальную цену.
+            Дальше — ваше решение.
+          </p>
+          <div className="rounded-xl bg-red-500/5 border border-red-500/10 p-4 text-sm">
+            <p className="font-medium text-red-500 mb-2">Что делаем мы:</p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+                <span>Приезжаем сами — в удобное для вас время</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+                <span>Оцениваем честно, без «сбивания» цены на месте</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+                <span>Оформляем договор и отдаём деньги сразу</span>
+              </li>
+            </ul>
+          </div>
+          <Button size="sm" variant="outline" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10" asChild>
+            <a href="#callback">Обсудить мою ситуацию</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+
+    {/* Разделитель */}
+    <div className="border-t border-border" />
+
+    {/* ОБЪЕДИНЁННЫЙ БЛОК: Почему выбирают нас (слева) + Как проходит выкуп (справа) */}
+    <div className="grid gap-10 lg:gap-14 lg:grid-cols-2 items-start">
+
+      {/* ЛЕВАЯ КОЛОНКА — Почему выбирают нас */}
+      <div className="space-y-6">
+        <div className="space-y-3">
+          <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+            Почему мы
+          </span>
+          <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
+            Почему выбирают нас
+          </h3>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Продавать машину можно по-разному, но с нами это всегда{" "}
+            <span className="text-red-500 font-medium">быстро, честно и удобно</span>.
+          </p>
+        </div>
+
+        <p className="text-sm md:text-base text-muted-foreground">
+          Мы занимаемся выкупом автомобилей в Нижнем Новгороде и Нижегородской области более 10 лет.
+          Наша задача — сделать сделку простой и безопасной: без давления, скрытых условий и лишней беготни.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h4 className="font-semibold text-sm">Быстрая оценка онлайн</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Оставьте заявку — и уже через пять минут узнаете предварительную цену своего автомобиля.
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="group bg-card border border-border p-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-                  <PhoneCall className="h-5 w-5" />
-                </div>
-                <span className="font-heading text-2xl font-black text-red-500/20 group-hover:text-red-500/40 transition-colors">
-                  01
-                </span>
-              </div>
-              <h3 className="font-heading text-lg font-bold mb-1">Заявка</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Звонок, WhatsApp или удобная форма на нашем сайте. Мы на связи круглосуточно.
-              </p>
+          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+              <FileCheck className="h-5 w-5" />
             </div>
+            <h4 className="font-semibold text-sm">Сделка под ключ</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Наши юристы подготовят все документы и оформят продажу строго по закону — без лишних для вас хлопот.
+            </p>
+          </div>
 
-            <div className="group bg-card border border-border p-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-                  <Search className="h-5 w-5" />
-                </div>
-                <span className="font-heading text-2xl font-black text-red-500/20 group-hover:text-red-500/40 transition-colors">
-                  02
-                </span>
-              </div>
-              <h3 className="font-heading text-lg font-bold mb-1">Осмотр</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Бесплатный выезд эксперта-оценщика в удобное для вас место и время.
-              </p>
+          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+              <Car className="h-5 w-5" />
             </div>
+            <h4 className="font-semibold text-sm">Любые авто, любое состояние</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Выкупаем машины любых марок и моделей, годов выпуска и пробега — даже после ДТП или без ПТС.
+            </p>
+          </div>
 
-            <div className="group bg-card border border-border p-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-                  <CircleDollarSign className="h-5 w-5" />
-                </div>
-                <span className="font-heading text-2xl font-black text-red-500/20 group-hover:text-red-500/40 transition-colors">
-                  03
-                </span>
-              </div>
-              <h3 className="font-heading text-lg font-bold mb-1">Оценка и цена</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                Быстрый анализ текущего рынка и формирование лучшей стоимости за авто.
-              </p>
+          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+              <Wallet className="h-5 w-5" />
             </div>
+            <h4 className="font-semibold text-sm">Деньги сразу на руки</h4>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Сразу после подписания договора вы получаете всю сумму наличными или переводом на карту.
+            </p>
+          </div>
+        </div>
 
-            <div className="group bg-card border border-border p-5 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500 text-white">
-                  <FileText className="h-5 w-5" />
+        {/* Мини-блок «Какие авто выкупаем» */}
+        <div className="rounded-2xl border border-border bg-card p-5 space-y-4">
+          <h4 className="font-heading text-base font-bold">Какие авто мы выкупаем?</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Целые и в отличном состоянии (дороже всех)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>После ДТП, битые, не на ходу (сами заберем на эвакуаторе)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>В залоге, кредите или под арестом (закроем долг сами)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Коммерческий транспорт, спецтехнику и минивэны</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>Без ПТС, с ограничениями и любым пробегом</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* ПРАВАЯ КОЛОНКА — Как проходит выкуп (2×2) */}
+      <div id="stages" className="space-y-6 scroll-mt-24">
+        <div className="space-y-3">
+          <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+            Простая схема
+          </span>
+          <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
+            Как проходит выкуп
+          </h3>
+          <p className="text-sm md:text-base text-muted-foreground">
+            Всего 4 простых шага от первого контакта до получения денег за ваш автомобиль.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {/* Шаг 1 — Заявка */}
+          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
+                <Headset className="h-5 w-5" />
+              </div>
+              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
+                01
+              </span>
+            </div>
+            <h4 className="font-heading text-base font-bold mb-1.5">Заявка</h4>
+            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              Звонок, WhatsApp или удобная форма на нашем сайте. Мы на связи круглосуточно.
+            </p>
+          </div>
+
+          {/* Шаг 2 — Осмотр */}
+          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
+                <Eye className="h-5 w-5" />
+              </div>
+              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
+                02
+              </span>
+            </div>
+            <h4 className="font-heading text-base font-bold mb-1.5">Осмотр</h4>
+            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              Бесплатный выезд эксперта-оценщика в удобное для вас место и время.
+            </p>
+          </div>
+
+          {/* Шаг 3 — Оценка и цена */}
+          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
+                <TrendingUp className="h-5 w-5" />
+              </div>
+              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
+                03
+              </span>
+            </div>
+            <h4 className="font-heading text-base font-bold mb-1.5">Оценка и цена</h4>
+            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              Быстрый анализ текущего рынка и формирование лучшей стоимости за авто.
+            </p>
+          </div>
+
+          {/* Шаг 4 — Договор и деньги (акцентный) */}
+          <div className="group relative bg-gradient-to-br from-red-500 to-red-600 text-white rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-red-500/25 overflow-hidden">
+            <div
+              className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]"
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+                  <Handshake className="h-5 w-5" />
                 </div>
-                <span className="font-heading text-2xl font-black text-red-500/30 group-hover:text-red-500/50 transition-colors">
+                <span className="font-heading text-4xl font-black text-white/20 leading-none">
                   04
                 </span>
               </div>
-              <h3 className="font-heading text-lg font-bold mb-1">Договор + деньги</h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <h4 className="font-heading text-base font-bold mb-1.5">Договор + деньги</h4>
+              <p className="text-xs md:text-sm text-white/90 leading-relaxed">
                 Оформляем официальные документы на месте, оплата наличными или моментальный перевод.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Почему выбирают нас */}
-      <section id="about" className="border-t border-border bg-secondary/10">
-        <div className="mx-auto max-w-7xl px-4 md:px-8 py-20 grid gap-12 lg:grid-cols-2 items-center">
-          <div className="space-y-6">
-            <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-              Почему выбирают нас
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight">
-              Продавать машину можно по-разному, но с нами это всегда <span className="text-red-500">быстро, честно и удобно</span>
-            </h2>
-            <p className="text-muted-foreground">
-              Мы занимаемся профессиональным выкупом автомобилей в Нижегородской области более 10 лет.
-              Наша главная задача — сделать сделку максимально быстрой, безопасной и выгодной для вас.
-            </p>
+    </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 pt-2">
-              {whyUs.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-sm"
-                >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <h4 className="font-semibold">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-card border border-border p-8 rounded-2xl shadow-sm space-y-6">
-            <h3 className="font-heading text-2xl font-bold">Какие авто мы выкупаем?</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-red-500" /> Целые и в отличном состоянии (дороже всех)</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-red-500" /> После ДТП, битые, не на ходу (сами заберем на эвакуаторе)</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-red-500" /> В залоге, кредите или под арестом (закроем долг сами)</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-red-500" /> Коммерческий транспорт, спецтехнику и минивэны</li>
-              <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-red-500" /> Без ПТС, с ограничениями и любым пробегом</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+  </div>
+</section>
 
       {/* Отзывы */}
       <section id="reviews" className="border-t border-border bg-background py-12 md:py-20">
@@ -666,7 +933,7 @@ function Index() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[otziv1, otziv2, otziv3, otziv4, otziv5].map((src, i) => (
+            {[otziv1, otziv2].map((src, i) => (
               <div
                 key={i}
                 className="rounded-xl overflow-hidden border border-border cursor-zoom-in"
