@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import NovgorodOblast from "@/assets/novgor.webp";
 import {
   PhoneCall,
   Search,
@@ -60,6 +61,28 @@ import camry40 from "@/assets/camry40.jpg";
 import niva from "@/assets/niva.jpg";
 import dodge from "@/assets/dodge.jpg";
 import mitsubi from "@/assets/mitsubi.jpg";
+const nnovCities = [
+  "Нижний Новгород",
+  "Арзамас",
+  "Дзержинск",
+  "Бор",
+  "Кстово",
+  "Выкса",
+  "Балахна",
+  "Павлово",
+  "Саров",
+  "Городец",
+  "Семёнов",
+  "Богородск",
+  "Кулебаки",
+  "Навашино",
+  "Сергач",
+  "Лысково",
+  "Шахунья",
+  "Володарск",
+  "Горбатов",
+  "Ворсма",
+];
 
 const cars = [
     {
@@ -919,6 +942,59 @@ function Index() {
 
     </div>
 
+  </div>
+</section>
+
+{/* Блок с картой Нижегородской области и городами */}
+<section className="border-t border-border bg-background py-14 md:py-20">
+  <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-10 md:space-y-14">
+    <div className="text-center space-y-3 md:space-y-4 max-w-3xl mx-auto">
+      <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+        География работы
+      </span>
+      <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">
+        Выкупаем б/у автомобили в Нижнем Новгороде и по всей Нижегородской области
+      </h2>
+      <p className="text-sm md:text-base text-muted-foreground">
+        Скупка б/у авто на разборку в Нижнем Новгороде и по всей Нижегородской области
+      </p>
+    </div>
+
+    <div className="grid gap-10 lg:grid-cols-2 items-center">
+      {/* Карта */}
+      <div className="relative rounded-2xl border border-border bg-card p-6 md:p-8 flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent pointer-events-none" />
+        <img
+          src={NovgorodOblast}
+          alt="Карта Нижегородской области"
+          className="relative w-full max-w-md h-auto object-contain drop-shadow-sm"
+        />
+      </div>
+
+      {/* Список городов */}
+      <div className="space-y-5">
+        <h3 className="font-heading text-xl font-bold">
+          Города и населённые пункты, где мы работаем
+        </h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2.5 max-h-[420px] overflow-y-auto pr-2">
+          {nnovCities.map((city) => (
+            <div
+              key={city}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-red-500 transition-colors"
+            >
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span>{city}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-muted-foreground pt-2">
+          Если вашего города нет в списке — позвоните, уточним возможность выезда.
+        </p>
+        <Button size="sm" className="bg-red-500 hover:bg-red-600 text-white" asChild>
+          <a href="#callback">Уточнить по моему городу</a>
+        </Button>
+      </div>
+    </div>
   </div>
 </section>
 
