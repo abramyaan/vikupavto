@@ -178,12 +178,12 @@ const cars = [
 ];
 
 const heroFeatures = [
-  { icon: MapPin, text: "Сами приедем и оценим машину" },
-  { icon: Car, text: "Купим авто даже битый" },
-  { icon: MessageCircle, text: "Бесплатно проконсультируем" },
-  { icon: ShieldCheck, text: "Не смотрим на состояние и обременения" },
-  { icon: Gauge, text: "Выкупаем с любым пробегом" },
-  { icon: ThumbsUp, text: "Объективно оценим" },
+  { icon: CircleDollarSign, text: "НАЛИЧНЫЙ И БЕЗНАЛИЧНЫЙ РАССЧЕТ" },
+  { icon: Car, text: "ЗАПРЕТНЫЕ И ЗАЛОГОВЫЕ АВТО" },
+  { icon: MessageCircle, text: "КОНСУЛЬТАЦИЯ БЕСПЛАТНО" },
+  { icon: ShieldCheck, text: "ЛЮБОЕ СОСТОЯНИЕ" },
+  { icon: Gauge, text: "ЛЮБОЙ ПРОБЕГ" },
+  { icon: ThumbsUp, text: "ЧЕСТНАЯ ОЦЕНКА" },
 ];
 
 const whyUs = [
@@ -239,7 +239,7 @@ export const Route = createFileRoute("/")({
 function Logo() {
   return (
     <a href="#" className="flex items-center gap-2 group">
-      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500 text-white shadow-sm group-hover:scale-105 transition-transform">
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-rose-500 text-white shadow-sm group-hover:scale-105 transition-transform">
         <Car className="h-5 w-5" />
       </div>
       <span className="font-heading text-lg font-black tracking-tight uppercase">
@@ -281,7 +281,7 @@ function CarCard({
               type="button"
               aria-label="Предыдущее фото"
               onClick={(e) => go(e, -1)}
-              className="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:bg-red-500 transition-all"
+              className="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:bg-rose-500 transition-all"
             >
               <ChevronLeft className="h-4 w-4" />
             </button>
@@ -289,7 +289,7 @@ function CarCard({
               type="button"
               aria-label="Следующее фото"
               onClick={(e) => go(e, 1)}
-              className="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:bg-red-500 transition-all"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:bg-rose-500 transition-all"
             >
               <ChevronRight className="h-4 w-4" />
             </button>
@@ -309,7 +309,7 @@ function CarCard({
                   setIdx(i);
                 }}
                 className={`h-1.5 rounded-full transition-all ${
-                  i === idx ? "w-4 bg-red-500" : "w-1.5 bg-white/70"
+                  i === idx ? "w-4 bg-rose-500" : "w-1.5 bg-white/70"
                 }`}
               />
             ))}
@@ -323,7 +323,7 @@ function CarCard({
             <h3 className="font-semibold text-lg leading-snug">{car.title}</h3>
             <p className="text-xs text-muted-foreground">{car.year} г.в.</p>
           </div>
-          <span className="inline-flex shrink-0 items-center rounded-lg bg-red-500/10 px-2.5 py-1 text-sm font-bold text-rose-500">
+          <span className="inline-flex shrink-0 items-center rounded-lg bg-rose-500/10 px-2.5 py-1 text-sm font-bold text-rose-500">
             {car.price}
           </span>
         </div>
@@ -439,19 +439,19 @@ function Index() {
 
     {/* Меню по центру */}
     <div className="hidden lg:flex items-center gap-1 rounded-full border border-border bg-secondary/40 px-1.5 py-1">
-      <a href="#about" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+      <a href="#about" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-rose-500 transition-colors">
         Почему мы
       </a>
-      <a href="#catalog" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+      <a href="#catalog" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-rose-500 transition-colors">
         Каталог
       </a>
-      <a href="#stages" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+      <a href="#stages" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-rose-500 transition-colors">
         Этапы
       </a>
-      <a href="#reviews" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+      <a href="#reviews" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-rose-500 transition-colors">
         Отзывы
       </a>
-      <a href="#faq" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-red-500 transition-colors">
+      <a href="#faq" className="px-3 py-1.5 text-sm font-medium rounded-full hover:bg-background hover:text-rose-500 transition-colors">
         Вопросы
       </a>
     </div>
@@ -465,7 +465,7 @@ function Index() {
         <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
           Звоните сейчас
         </span>
-        <span className="text-sm font-bold hover:text-red-500 transition-colors whitespace-nowrap">
+        <span className="text-sm font-bold hover:text-rose-500 transition-colors whitespace-nowrap">
           +7 (922) 188-25-30
         </span>
       </a>
@@ -475,7 +475,7 @@ function Index() {
         target="_blank"
         rel="noopener noreferrer"
         title="Telegram"
-        className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 transition-colors"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
@@ -487,14 +487,14 @@ function Index() {
         target="_blank"
         rel="noopener noreferrer"
         title="Макс"
-        className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-500 transition-colors"
+        className="flex h-9 w-9 items-center justify-center rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 transition-colors"
       >
         <img src={max} alt="Макс" className="h-5 w-5 object-contain" />
       </a>
 
       <Button
         size="sm"
-        className="hidden md:inline-flex bg-red-500 hover:bg-red-600 text-white ml-1"
+        className="hidden md:inline-flex bg-rose-500 hover:bg-rose-600 text-white ml-1"
         asChild
       >
         <a href="#callback">Оставить заявку</a>
@@ -505,66 +505,69 @@ function Index() {
       </nav>
 
       {/* Hero-блок */}
-      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden bg-black pt-20 pb-16 md:pt-24 md:pb-20">
-        <div className="absolute inset-0 z-0">
-          <img src={fon} alt="Hero background" className="h-full w-full object-cover object-center opacity filter brightness-80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-black/40" />
-        </div>
+  {/* Hero-блок */}
+<section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden bg-black pt-8 pb-14 md:pt-20 md:pb-20">
+  <div className="absolute inset-0 z-0">
+    <img src={fon} alt="Hero background" className="h-full w-full object-cover object-center opacity filter brightness-80" />
+    <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-black/40" />
+  </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-8 text-center space-y-6">
-          <span
-  className="inline-block text-sm md:text-base font-semibold tracking-wide text-white animate-fade-in"
-  style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
->
-  Нижний Новгород и Нижегородская область
-</span>
+  <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-8 text-center space-y-4 md:space-y-6">
+    <span
+      className="inline-block text-sm md:text-base font-semibold tracking-wide text-white animate-fade-in"
+      style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+    >
+      Нижний Новгород и Нижегородская область
+    </span>
 
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase">
-            Выкуп авто в любом состоянии.{" "}
-            <span className="text-rose-500">Оценка эксперта и выезд бесплатно.</span>
-          </h1>
+    <h1 className="font-heading text-2xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase">
+      Выкуп авто в любом состоянии.{" "}
+      <span className="text-rose-500">Оценка эксперта и выезд бесплатно.</span>
+    </h1>
 
-          <p className="mx-auto max-w-2xl text-base md:text-xl text-zinc-300">
-            Любой автомобиль может стоить хороших денег
-          </p>
+    <p className="mx-auto max-w-2xl text-sm md:text-xl text-zinc-300">
+      Любой автомобиль может стоить хороших денег
+    </p>
 
-          {/* Фичи в hero */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
-            {heroFeatures.map((f, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-3 text-left"
-              >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-500/15 text-red-400">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <span className="text-sm font-medium text-white">{f.text}</span>
-              </div>
-            ))}
+    {/* Фичи в hero — 2 колонки на мобилке, компактнее */}
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pt-1 md:pt-2">
+      {heroFeatures.map((f, i) => (
+        <div
+          key={i}
+          className="flex items-center gap-2 rounded-lg md:rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm px-2.5 py-2 md:px-4 md:py-3 text-left"
+        >
+          <div className="flex h-7 w-7 md:h-9 md:w-9 shrink-0 items-center justify-center rounded-md md:rounded-lg bg-rose-500/15 text-rose-400">
+            <f.icon className="h-3.5 w-3.5 md:h-5 md:w-5" />
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base bg-red-500 hover:bg-red-600 text-white shadow-lg shadow-red-500/20" asChild>
-              <a href="#callback">Оставить заявку</a>
-            </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base bg-white/5 border-white/10 hover:bg-white/10 text-white" asChild>
-              <a href="#catalog">Смотреть выкупленные</a>
-            </Button>
-          </div>
+          <span className="text-[11px] md:text-sm font-medium text-white leading-tight">
+            {f.text}
+          </span>
         </div>
+      ))}
+    </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5">
-          <a
-            href="#catalog"
-            className="flex flex-col items-center text-xs tracking-widest text-zinc-400 hover:text-red-400 uppercase transition-colors duration-300 group"
-          >
-            <span className="mb-1 font-medium scale-90 opacity-80 group-hover:opacity-100 transition-opacity">
-              Листайте вниз
-            </span>
-            <ChevronsDown className="h-5 w-5 animate-bounce text-muted-foreground group-hover:text-red-400 transition-colors" />
-          </a>
-        </div>
-      </section>
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 pt-2 md:pt-4">
+      <Button size="lg" className="w-full sm:w-auto h-12 px-8 text-base bg-rose-500 hover:bg-rose-600 text-white shadow-lg shadow-rose-500/20" asChild>
+        <a href="#callback">Оставить заявку</a>
+      </Button>
+      <Button size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 text-base bg-white/5 border-white/10 hover:bg-white/10 text-white" asChild>
+        <a href="#catalog">Смотреть выкупленные</a>
+      </Button>
+    </div>
+  </div>
+
+  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1.5">
+    <a
+      href="#catalog"
+      className="flex flex-col items-center text-xs tracking-widest text-zinc-400 hover:text-rose-400 uppercase transition-colors duration-300 group"
+    >
+      <span className="mb-1 font-medium scale-90 opacity-80 group-hover:opacity-100 transition-opacity">
+        Листайте вниз
+      </span>
+      <ChevronsDown className="h-5 w-5 animate-bounce text-muted-foreground group-hover:text-rose-400 transition-colors" />
+    </a>
+  </div>
+</section>
 
       {/* Каталог */}
       <section id="catalog" className="mx-auto max-w-7xl px-4 md:px-8 py-20 space-y-12">
@@ -587,8 +590,8 @@ function Index() {
               onClick={() => setActiveTab(t.key as typeof activeTab)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 activeTab === t.key
-                  ? "bg-red-500 text-white"
-                  : "hover:bg-red-500/10 text-muted-foreground hover:text-rose-500"
+                  ? "bg-rose-500 text-white"
+                  : "hover:bg-rose-500/10 text-muted-foreground hover:text-rose-500"
               }`}
             >
               {t.label}
@@ -615,7 +618,7 @@ function Index() {
     {/* ===== ШАПКА ===== */}
     <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 items-end">
       <div className="lg:col-span-7">
-        <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-5">
+        <span className="block text-[11px] uppercase tracking-[0.3em] text-rose-500 font-semibold mb-5">
           ● Как мы работаем
         </span>
         <h2 className="font-heading text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
@@ -642,7 +645,7 @@ function Index() {
 {/* Row 01 */}
 <article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
   <div className="lg:col-span-1">
-    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">
+    <span className="font-heading text-5xl md:text-7xl font-black text-rose-500 leading-none">
       01
     </span>
   </div>
@@ -668,7 +671,7 @@ function Index() {
 {/* Row 02 */}
 <article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
   <div className="lg:col-span-1">
-    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">02</span>
+    <span className="font-heading text-5xl md:text-7xl font-black text-rose-500 leading-none">02</span>
   </div>
   <div className="lg:col-span-4">
     <h4 className="font-heading text-2xl md:text-3xl font-bold leading-tight mb-3">
@@ -692,13 +695,13 @@ function Index() {
 {/* Row 03 */}
 <article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
   <div className="lg:col-span-1">
-    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">03</span>
+    <span className="font-heading text-5xl md:text-7xl font-black text-rose-500 leading-none">03</span>
   </div>
   <div className="lg:col-span-4">
     <h4 className="font-heading text-2xl md:text-3xl font-bold leading-tight mb-3">
       Типичная ситуация
     </h4>
-    <blockquote className="text-sm italic text-muted-foreground leading-relaxed border-l-2 border-red-500 pl-3">
+    <blockquote className="text-sm italic text-muted-foreground leading-relaxed border-l-2 border-rose-500 pl-3">
       «Хочу сменить машину на что-то посвежее, но не готов месяцами возиться с объявлениями»
     </blockquote>
   </div>
@@ -722,7 +725,7 @@ function Index() {
     {/* ===== ПОЧЕМУ ВЫБИРАЮТ НАС — BIG TYPOGRAPHY ===== */}
     <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-start">
       <div className="lg:col-span-5 lg:sticky lg:top-24">
-        <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-5">
+        <span className="block text-[11px] uppercase tracking-[0.3em] text-rose-500 font-semibold mb-5">
           ● Почему мы
         </span>
         <h3 className="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-5">
@@ -754,11 +757,11 @@ function Index() {
               key={i}
               className="grid grid-cols-[auto_1fr] gap-5 md:gap-8 py-6 md:py-8 border-b border-border first:border-t group"
             >
-              <span className="font-heading text-lg md:text-xl font-bold text-red-500 pt-1">
+              <span className="font-heading text-lg md:text-xl font-bold text-rose-500 pt-1">
                 {item.n}
               </span>
               <div>
-                <h4 className="font-heading text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
+                <h4 className="font-heading text-lg md:text-2xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
                   {item.t}
                 </h4>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
@@ -788,7 +791,7 @@ function Index() {
             ].map((tag, i) => (
               <span
                 key={i}
-                className="inline-flex items-center rounded-full border border-border bg-card px-3.5 py-1.5 text-xs md:text-sm hover:border-red-500/40 hover:text-red-500 transition-colors cursor-default"
+                className="inline-flex items-center rounded-full border border-border bg-card px-3.5 py-1.5 text-xs md:text-sm hover:border-rose-500/40 hover:text-rose-500 transition-colors cursor-default"
               >
                 {tag}
               </span>
@@ -802,7 +805,7 @@ function Index() {
     <div id="stages" className="scroll-mt-24">
       <div className="flex items-baseline justify-between mb-10 md:mb-16">
         <div>
-          <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-4">
+          <span className="block text-[11px] uppercase tracking-[0.3em] text-rose-500 font-semibold mb-4">
             ● Простая схема
           </span>
           <h3 className="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-[1.05]">
@@ -832,7 +835,7 @@ function Index() {
               <div
                 className={`relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-full font-heading text-base font-bold ${
                   step.accent
-                    ? "bg-red-500 text-white shadow-lg shadow-red-500/30"
+                    ? "bg-rose-500 text-white shadow-lg shadow-rose-500/30"
                     : "bg-background border-2 border-border"
                 }`}
               >
@@ -857,7 +860,7 @@ function Index() {
 <section className="border-t border-border bg-background py-14 md:py-20">
   <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-10 md:space-y-14">
     <div className="text-center space-y-3 md:space-y-4 max-w-3xl mx-auto">
-      <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+      <span className="inline-flex items-center rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-500 border border-rose-500/20">
         География работы
       </span>
       <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">
@@ -871,7 +874,7 @@ function Index() {
     <div className="grid gap-10 lg:grid-cols-2 items-center">
       {/* Карта */}
       <div className="relative rounded-2xl border border-border bg-card p-6 md:p-8 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent pointer-events-none" />
         <img
           src={NovgorodOblast}
           alt="Карта Нижегородской области"
@@ -888,9 +891,9 @@ function Index() {
           {nnovCities.map((city) => (
             <div
               key={city}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-red-500 transition-colors"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-rose-500 transition-colors"
             >
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-rose-500" />
               <span>{city}</span>
             </div>
           ))}
@@ -898,7 +901,7 @@ function Index() {
         <p className="text-xs text-muted-foreground pt-2">
           Если вашего города нет в списке — позвоните, уточним возможность выезда.
         </p>
-        <Button size="sm" className="bg-red-500 hover:bg-red-600 text-white" asChild>
+        <Button size="sm" className="bg-rose-500 hover:bg-rose-600 text-white" asChild>
           <a href="#callback">Уточнить по моему городу</a>
         </Button>
       </div>
@@ -934,7 +937,7 @@ function Index() {
       <section id="faq" className="border-t border-border bg-secondary/10 py-12 md:py-20">
         <div className="mx-auto max-w-3xl px-4 md:px-8 space-y-8 md:space-y-10">
           <div className="text-center space-y-3 md:space-y-4">
-            <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+            <span className="inline-flex items-center rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-500 border border-rose-500/20">
               FAQ
             </span>
             <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">Часто задаваемые вопросы</h2>
@@ -950,7 +953,7 @@ function Index() {
                 <div
                   key={i}
                   className={`rounded-xl border bg-card transition-all ${
-                    isOpen ? "border-red-500/40 shadow-sm" : "border-border"
+                    isOpen ? "border-rose-500/40 shadow-sm" : "border-border"
                   }`}
                 >
                   <button
@@ -960,7 +963,7 @@ function Index() {
                   >
                     <span className="font-medium text-sm md:text-base">{item.q}</span>
                     <ChevronDown
-                      className={`h-5 w-5 shrink-0 text-red-500 transition-transform duration-300 ${
+                      className={`h-5 w-5 shrink-0 text-rose-500 transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
@@ -989,8 +992,8 @@ function Index() {
   <div className="grid gap-10 lg:grid-cols-5 lg:gap-14 items-center">
     {/* Левая колонка — доверие и преимущества */}
     <div className="lg:col-span-2 space-y-6">
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-        <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-500 border border-rose-500/20">
+        <span className="h-1.5 w-1.5 rounded-full bg-rose-500 animate-pulse" />
         Бесплатная оценка
       </span>
 
@@ -1011,7 +1014,7 @@ function Index() {
           { icon: Wallet, text: "Оценка и выезд — бесплатно" },
         ].map((item, i) => (
           <li key={i} className="flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-rose-500">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-rose-500/10 text-rose-500">
               <item.icon className="h-4.5 w-4.5" />
             </span>
             <span className="text-sm font-medium">{item.text}</span>
@@ -1048,7 +1051,7 @@ function Index() {
             required
             value={carModel}
             onChange={(e) => setCarModel(e.target.value)}
-            className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all"
+            className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-rose-500/30 focus-visible:border-rose-500 transition-all"
           />
         </div>
 
@@ -1065,7 +1068,7 @@ function Index() {
               required
               value={carYear}
               onChange={(e) => setCarYear(e.target.value)}
-              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all"
+              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-rose-500/30 focus-visible:border-rose-500 transition-all"
             />
           </div>
 
@@ -1080,7 +1083,7 @@ function Index() {
               placeholder="+7 (___) ___-__-__"
               value={phone}
               required
-              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all ym-record-keys"
+              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-rose-500/30 focus-visible:border-rose-500 transition-all ym-record-keys"
               onChange={(e) => {
                 const onlyNums = e.target.value.replace(/\D/g, "");
                 if (onlyNums.length <= 11) setPhone(onlyNums);
@@ -1096,7 +1099,7 @@ function Index() {
 
         <Button
           type="submit"
-          className="w-full h-12 text-base rounded-xl bg-red-500 hover:bg-red-600 text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/30"
+          className="w-full h-12 text-base rounded-xl bg-rose-500 hover:bg-rose-600 text-white shadow-md shadow-rose-500/20 transition-all hover:shadow-lg hover:shadow-rose-500/30"
           disabled={isSending}
         >
           {isSending ? (
@@ -1150,7 +1153,7 @@ function Index() {
       {/* Оверлей отправки заявки */}
       {isSending && (
         <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-4 bg-background/90 backdrop-blur-sm">
-          <div className="h-12 w-12 rounded-full border-4 border-red-500/20 border-t-red-500 animate-spin" />
+          <div className="h-12 w-12 rounded-full border-4 border-rose-500/20 border-t-rose-500 animate-spin" />
           <p className="text-sm font-medium text-muted-foreground">Отправляем заявку, подождите...</p>
         </div>
       )}
