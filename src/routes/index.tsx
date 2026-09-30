@@ -1070,68 +1070,148 @@ function Index() {
       </section>
 
       {/* Форма заявки */}
-      <section id="callback" className="mx-auto max-w-3xl px-4 py-20 text-center space-y-8">
-        <div className="space-y-3">
-          <h2 className="font-heading text-3xl font-bold">Узнайте стоимость за 5 минут</h2>
-          <p className="text-muted-foreground">Заполните форму, и наш оценщик свяжется с вами с готовым предложением.</p>
+{/* Форма заявки */}
+<section id="callback" className="relative mx-auto max-w-6xl px-4 py-20 md:py-24">
+  {/* Декоративный фон */}
+  <div
+    className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.08),transparent_60%)]"
+    aria-hidden="true"
+  />
+
+  <div className="grid gap-10 lg:grid-cols-5 lg:gap-14 items-center">
+    {/* Левая колонка — доверие и преимущества */}
+    <div className="lg:col-span-2 space-y-6">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
+        <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
+        Бесплатная оценка
+      </span>
+
+      <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+        Узнайте реальную цену своего авто{" "}
+        <span className="text-red-500">за 5 минут</span>
+      </h2>
+
+      <p className="text-muted-foreground text-base">
+        Оставьте заявку — эксперт свяжется с вами, задаст пару вопросов и назовёт
+        предварительную стоимость. Без обязательств и навязчивых звонков.
+      </p>
+
+      <ul className="space-y-3 pt-2">
+        {[
+          { icon: Zap, text: "Ответим в течение 5 минут" },
+          { icon: ShieldCheck, text: "Никаких обязательств и давления" },
+          { icon: Wallet, text: "Оценка и выезд — бесплатно" },
+        ].map((item, i) => (
+          <li key={i} className="flex items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+              <item.icon className="h-4.5 w-4.5" />
+            </span>
+            <span className="text-sm font-medium">{item.text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Правая колонка — форма */}
+    <div className="lg:col-span-3">
+      <form
+        onSubmit={handleFormSubmit}
+        className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-lg shadow-black/5 space-y-5"
+      >
+        {/* Заголовок формы */}
+        <div className="space-y-1">
+          <h3 className="font-heading text-lg font-bold">
+            Заявка на оценку
+          </h3>
+          <p className="text-xs text-muted-foreground">
+            Заполните 3 поля — этого достаточно для расчёта
+          </p>
         </div>
-        <form
-          className="bg-card border border-border p-6 md:p-8 rounded-2xl shadow-sm space-y-4 text-left"
-          onSubmit={handleFormSubmit}
-        >
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Марка и модель</label>
-              <Input
-                placeholder="Например: Toyota Camry"
-                required
-                value={carModel}
-                onChange={(e) => setCarModel(e.target.value)}
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Год выпуска</label>
-              <Input
-                placeholder="Например: 2018"
-                required
-                value={carYear}
-                onChange={(e) => setCarYear(e.target.value)}
-              />
-            </div>
+
+        {/* Марка и модель */}
+        <div className="space-y-2">
+          <label htmlFor="carModel" className="text-sm font-medium flex items-center gap-1.5">
+            <Car className="h-3.5 w-3.5 text-red-500" />
+            Марка и модель
+          </label>
+          <Input
+            id="carModel"
+            placeholder="Toyota Camry, Kia Rio, ВАЗ 2115…"
+            required
+            value={carModel}
+            onChange={(e) => setCarModel(e.target.value)}
+            className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all"
+          />
+        </div>
+
+        {/* Год и телефон — в одну строку на sm+ */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-2">
+            <label htmlFor="carYear" className="text-sm font-medium flex items-center gap-1.5">
+              <FileCheck className="h-3.5 w-3.5 text-red-500" />
+              Год выпуска
+            </label>
+            <Input
+              id="carYear"
+              placeholder="2015"
+              required
+              value={carYear}
+              onChange={(e) => setCarYear(e.target.value)}
+              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all"
+            />
           </div>
 
           <div className="space-y-2">
-            <label className="text-sm font-medium">Номер телефона</label>
+            <label htmlFor="phone" className="text-sm font-medium flex items-center gap-1.5">
+              <PhoneCall className="h-3.5 w-3.5 text-red-500" />
+              Телефон
+            </label>
             <Input
+              id="phone"
               type="tel"
-              placeholder="79990000000"
+              placeholder="+7 (___) ___-__-__"
               value={phone}
               required
-              className="ym-record-keys"
+              className="h-12 rounded-xl bg-background border-border focus-visible:ring-2 focus-visible:ring-red-500/30 focus-visible:border-red-500 transition-all ym-record-keys"
               onChange={(e) => {
                 const onlyNums = e.target.value.replace(/\D/g, "");
-                if (onlyNums.length <= 11) {
-                  setPhone(onlyNums);
-                }
+                if (onlyNums.length <= 11) setPhone(onlyNums);
               }}
             />
-            <span className="text-[11px] text-muted-foreground block mt-1">
-              Введено цифр: {phone.length} из 11
+            <span className="text-[11px] text-muted-foreground block">
+              {phone.length < 11
+                ? `Введено ${phone.length} из 11 цифр`
+                : "✓ Номер готов к отправке"}
             </span>
           </div>
+        </div>
 
-          <Button
-            type="submit"
-            className="w-full h-12 text-base bg-red-500 hover:bg-red-600 text-white"
-            disabled={isSending}
-          >
-            {isSending ? "Отправка..." : "Отправить заявку на оценку"}
-          </Button>
-          <p className="text-[11px] text-center text-muted-foreground">
-            Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
-          </p>
-        </form>
-      </section>
+        <Button
+          type="submit"
+          className="w-full h-12 text-base rounded-xl bg-red-500 hover:bg-red-600 text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/30"
+          disabled={isSending}
+        >
+          {isSending ? (
+            <span className="flex items-center gap-2">
+              <span className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+              Отправляем…
+            </span>
+          ) : (
+            <span className="flex items-center gap-2">
+              Получить оценку
+              <ChevronRight className="h-4 w-4" />
+            </span>
+          )}
+        </Button>
+
+        <p className="text-[11px] text-center text-muted-foreground leading-relaxed">
+          Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+          и подтверждаете, что ознакомлены с политикой конфиденциальности.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
 
       {/* Футер */}
       <footer className="border-t border-border bg-secondary/30">
