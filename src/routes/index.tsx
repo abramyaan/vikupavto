@@ -2,6 +2,8 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import NovgorodOblast from "@/assets/novgor.webp";
+import diler from "@/assets/diler.webp";
+
 import {
   PhoneCall,
   Search,
@@ -241,7 +243,7 @@ function Logo() {
         <Car className="h-5 w-5" />
       </div>
       <span className="font-heading text-lg font-black tracking-tight uppercase">
-        Авто<span className="text-red-500">Выкуп</span>
+        Авто<span className="text-rose-500">Выкуп</span>
       </span>
     </a>
   );
@@ -321,7 +323,7 @@ function CarCard({
             <h3 className="font-semibold text-lg leading-snug">{car.title}</h3>
             <p className="text-xs text-muted-foreground">{car.year} г.в.</p>
           </div>
-          <span className="inline-flex shrink-0 items-center rounded-lg bg-red-500/10 px-2.5 py-1 text-sm font-bold text-red-500">
+          <span className="inline-flex shrink-0 items-center rounded-lg bg-red-500/10 px-2.5 py-1 text-sm font-bold text-rose-500">
             {car.price}
           </span>
         </div>
@@ -329,7 +331,7 @@ function CarCard({
         <Button
           size="sm"
           variant="secondary"
-          className="w-full bg-red-500 hover:bg-red-600 text-white transition-colors"
+          className="w-full bg-rose-500 hover:bg-rose-600 text-white transition-colors"
           asChild
         >
           <a href="#callback">Хочу похожую цену</a>
@@ -415,11 +417,11 @@ function Index() {
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-8 h-9">
     <div className="flex items-center gap-6 text-muted-foreground">
       <span className="flex items-center gap-1.5">
-        <MapPin className="h-3.5 w-3.5 text-red-500" />
+        <MapPin className="h-3.5 w-3.5 text-rose-500" />
         Нижний Новогород, ул. Малышева, 51
       </span>
       <span className="flex items-center gap-1.5">
-        <ShieldCheck className="h-3.5 w-3.5 text-red-500" />
+        <ShieldCheck className="h-3.5 w-3.5 text-rose-500" />
         Работаем 24/7 без выходных
       </span>
     </div>
@@ -503,21 +505,23 @@ function Index() {
       </nav>
 
       {/* Hero-блок */}
-      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden bg-black pt-32 pb-20 md:pt-30">
+      <section className="relative min-h-[90vh] flex items-start justify-center overflow-hidden bg-black pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img src={fon} alt="Hero background" className="h-full w-full object-cover object-center opacity filter brightness-80" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-black/40" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-8 text-center space-y-6">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400 border border-red-500/30 animate-fade-in">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
-            Выкуп авто в Нижнем Новгороде и Нижегородской области
-          </span>
+          <span
+  className="inline-block text-sm md:text-base font-semibold tracking-wide text-white animate-fade-in"
+  style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
+>
+  Нижний Новгород и Нижегородская область
+</span>
 
           <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight uppercase">
             Выкуп авто в любом состоянии.{" "}
-            <span className="text-red-500">Оценка эксперта и выезд бесплатно.</span>
+            <span className="text-rose-500">Оценка эксперта и выезд бесплатно.</span>
           </h1>
 
           <p className="mx-auto max-w-2xl text-base md:text-xl text-zinc-300">
@@ -584,7 +588,7 @@ function Index() {
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 activeTab === t.key
                   ? "bg-red-500 text-white"
-                  : "hover:bg-red-500/10 text-muted-foreground hover:text-red-500"
+                  : "hover:bg-red-500/10 text-muted-foreground hover:text-rose-500"
               }`}
             >
               {t.label}
@@ -604,342 +608,246 @@ function Index() {
 
       {/* Почему выбирают нас */}
 {/* ЕДИНЫЙ БЛОК: Условия + Как проходит + Почему выбирают */}
-<section id="about" className="border-t border-border bg-secondary/5 py-14 md:py-24">
-  <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-14 md:space-y-20">
+{/* ЕДИНЫЙ БЛОК: Условия + Как проходит + Почему выбирают */}
+<section id="about" className="border-t border-border bg-secondary/5 py-16 md:py-28">
+  <div className="mx-auto max-w-7xl px-4 md:px-8 space-y-20 md:space-y-32">
 
-    {/* Общая шапка */}
-    <div className="text-center space-y-3 md:space-y-4 max-w-3xl mx-auto">
-      <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-        Как мы работаем
-      </span>
-      <h2 className="font-heading text-2xl md:text-4xl font-bold tracking-tight">
-        Что и как мы выкупаем
-      </h2>
-      <p className="text-sm md:text-base text-muted-foreground">
-        Продавать машину можно по-разному, но с нами это всегда быстро, честно и удобно.
-        Ниже — условия, схема работы и причины, по которым клиенты выбирают нас.
-      </p>
+    {/* ===== ШАПКА ===== */}
+    <div className="grid gap-8 lg:grid-cols-12 lg:gap-12 items-end">
+      <div className="lg:col-span-7">
+        <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-5">
+          ● Как мы работаем
+        </span>
+        <h2 className="font-heading text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          Что и как<br className="hidden md:block" /> мы выкупаем
+        </h2>
+      </div>
+      <div className="lg:col-span-5 lg:pb-2">
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+          Продавать машину можно по-разному, но с нами это всегда быстро, честно и удобно.
+          Ниже — условия, схема работы и причины, по которым клиенты выбирают нас.
+        </p>
+      </div>
     </div>
 
-    {/* Подблок 1 — Условия выкупа (3 колонки) */}
-    <div className="space-y-6 md:space-y-8">
-      <div className="text-center space-y-2">
-        <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
-          Условия выкупа
+    {/* ===== УСЛОВИЯ ВЫКУПА — EDITORIAL ROWS ===== */}
+    <div>
+      <div className="flex items-baseline justify-between mb-8 md:mb-12">
+        <h3 className="font-heading text-2xl md:text-3xl font-bold">Условия выкупа</h3>
+        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground hidden sm:block">
+          Три сценария
+        </span>
+      </div>
+
+{/* Row 01 */}
+<article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
+  <div className="lg:col-span-1">
+    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">
+      01
+    </span>
+  </div>
+  <div className="lg:col-span-4">
+    <h4 className="font-heading text-2xl md:text-3xl font-bold leading-tight mb-3">
+      Любой возраст и&nbsp;состояние
+    </h4>
+    <p className="text-sm text-muted-foreground leading-relaxed">
+      От «свежих» до совсем старых. Минимального порога по цене — нет.
+    </p>
+  </div>
+  <div className="lg:col-span-7">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-muted-foreground">
+      <li>— Любые годы выпуска</li>
+      <li>— Дорогие: до 20 млн ₽</li>
+      <li>— Цену назовём по телефону</li>
+      <li>— ПТС обязателен</li>
+      <li>— Только легковые</li>
+    </ul>
+  </div>
+</article>
+
+{/* Row 02 */}
+<article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
+  <div className="lg:col-span-1">
+    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">02</span>
+  </div>
+  <div className="lg:col-span-4">
+    <h4 className="font-heading text-2xl md:text-3xl font-bold leading-tight mb-3">
+      Срочный выкуп
+    </h4>
+    <p className="text-sm text-muted-foreground leading-relaxed">
+      Расчёт сразу после подписания договора — без ожидания и лишних поездок.
+    </p>
+  </div>
+  <div className="lg:col-span-7">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-muted-foreground">
+      <li>— Принимаем звонки 24/7</li>
+      <li>— Цену озвучим по телефону</li>
+      <li>— Договор и деньги на месте</li>
+      <li>— Без очередей в ГИБДД</li>
+      <li>— Рекорд — 30 минут</li>
+    </ul>
+  </div>
+</article>
+
+{/* Row 03 */}
+<article className="grid gap-6 lg:grid-cols-12 lg:gap-10 py-8 md:py-12 border-t-2 border-foreground/10 items-start">
+  <div className="lg:col-span-1">
+    <span className="font-heading text-5xl md:text-7xl font-black text-red-500 leading-none">03</span>
+  </div>
+  <div className="lg:col-span-4">
+    <h4 className="font-heading text-2xl md:text-3xl font-bold leading-tight mb-3">
+      Типичная ситуация
+    </h4>
+    <blockquote className="text-sm italic text-muted-foreground leading-relaxed border-l-2 border-red-500 pl-3">
+      «Хочу сменить машину на что-то посвежее, но не готов месяцами возиться с объявлениями»
+    </blockquote>
+  </div>
+  <div className="lg:col-span-7">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-muted-foreground">
+      <li>— Приезжаем сами</li>
+      <li>— Оцениваем честно</li>
+      <li>— Оформляем договор</li>
+      <li>— Отдаём деньги сразу</li>
+    </ul>
+  </div>
+</article>
+
+      <div className="flex justify-center pt-8 md:pt-10">
+        <Button size="lg" className="bg-rose-500 hover:bg-rose-600 text-white" asChild>
+          <a href="#callback">Узнать потолок цены</a>
+        </Button>
+      </div>
+    </div>
+
+    {/* ===== ПОЧЕМУ ВЫБИРАЮТ НАС — BIG TYPOGRAPHY ===== */}
+    <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-start">
+      <div className="lg:col-span-5 lg:sticky lg:top-24">
+        <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-5">
+          ● Почему мы
+        </span>
+        <h3 className="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-5">
+          Почему выбирают нас
         </h3>
-        <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
-          Три главных сценария — выберите свой и мы подскажем, как действовать.
+        <p className="text-base text-muted-foreground leading-relaxed mb-8">
+          Мы занимаемся выкупом автомобилей в Нижнем Новгороде и Нижегородской области более 10 лет.
+          Наша задача — сделать сделку простой и безопасной, без давления и лишней беготни.
         </p>
+        {/* ЗАГЛУШКА под фото */}
+        <div className="aspect-[4/3] rounded-2xl bg-secondary border border-border flex items-center justify-center text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
+          <img
+  src={diler}
+  alt="Команда АвтоВыкуп"
+  className="aspect-[4/3] w-full object-cover rounded-2xl"
+/>
+        </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        {/* Колонка 1 — Любой возраст и состояние */}
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
-              <Car className="h-6 w-6" />
-            </div>
-            <h4 className="font-heading text-lg font-bold">Любой возраст и состояние</h4>
-          </div>
-          <ul className="space-y-2.5 text-sm text-muted-foreground">
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Автомобили любых годов выпуска — от «свежих» до совсем старых</span>
+      <div className="lg:col-span-7">
+        <ol>
+          {[
+            { n: "01", t: "Быстрая оценка онлайн", d: "Оставьте заявку — и уже через пять минут узнаете предварительную цену своего автомобиля." },
+            { n: "02", t: "Сделка под ключ", d: "Наши юристы подготовят все документы и оформят продажу строго по закону — без лишних для вас хлопот." },
+            { n: "03", t: "Любые авто, любое состояние", d: "Выкупаем машины любых марок и моделей, годов выпуска и пробега — даже после ДТП или без ПТС." },
+            { n: "04", t: "Деньги сразу на руки", d: "Сразу после подписания договора вы получаете всю сумму наличными или переводом на карту." },
+          ].map((item, i) => (
+            <li
+              key={i}
+              className="grid grid-cols-[auto_1fr] gap-5 md:gap-8 py-6 md:py-8 border-b border-border first:border-t group"
+            >
+              <span className="font-heading text-lg md:text-xl font-bold text-red-500 pt-1">
+                {item.n}
+              </span>
+              <div>
+                <h4 className="font-heading text-lg md:text-2xl font-bold mb-2 group-hover:text-red-500 transition-colors">
+                  {item.t}
+                </h4>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl">
+                  {item.d}
+                </p>
+              </div>
             </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Недорогие и «уставшие» — минимального порога по цене нет</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Дорогие — выкупаем до 20 млн ₽</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Хотите узнать цену заранее — назовём по телефону за пару минут</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>ПТС обязателен: без него не выкупаем</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Только легковые: грузовой транспорт не берём</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Дороже 20 млн ₽ — не наш формат</span>
-            </li>
-          </ul>
-          <Button size="sm" className="w-full bg-red-500 hover:bg-red-600 text-white" asChild>
-            <a href="#callback">Узнать потолок цены</a>
-          </Button>
-        </div>
+          ))}
+        </ol>
 
-        {/* Колонка 2 — Срочный выкуп */}
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
-              <Zap className="h-6 w-6" />
-            </div>
-            <h4 className="font-heading text-lg font-bold">Срочный выкуп</h4>
+        {/* Какие авто выкупаем — тегами */}
+        <div className="mt-10 md:mt-14">
+          <h4 className="font-heading text-lg md:text-xl font-bold mb-5">
+            Какие авто мы выкупаем
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {[
+              "Целые и в отличном состоянии",
+              "После ДТП и битые",
+              "Не на ходу — эвакуатор бесплатно",
+              "В залоге и кредите",
+              "Под арестом",
+              "Без ПТС",
+              "Коммерческий транспорт",
+              "Минивэны и спецтехника",
+              "С любым пробегом",
+            ].map((tag, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center rounded-full border border-border bg-card px-3.5 py-1.5 text-xs md:text-sm hover:border-red-500/40 hover:text-red-500 transition-colors cursor-default"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-          <p className="text-sm text-muted-foreground">
-            Расчёт сразу после подписания договора — без ожидания и лишних поездок.
-          </p>
-          <ul className="space-y-2.5 text-sm text-muted-foreground">
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Звоните в любое время: принимаем звонки круглосуточно</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Потолок цены озвучиваем ещё по телефону</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Договор и деньги — на месте, без очередей в ГИБДД</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>30 минут — это рекорд, а не норма</span>
-            </li>
-            <li className="flex gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>При дальнем выезде сделка занимает день</span>
-            </li>
-          </ul>
-          <div className="flex items-end gap-2 pt-2">
-            <span className="font-heading text-5xl font-black text-red-500 leading-none">30</span>
-            <span className="text-sm text-muted-foreground pb-1">минут — наш рекорд</span>
-          </div>
-          <Button size="sm" className="w-full bg-red-500 hover:bg-red-600 text-white" asChild>
-            <a href="#callback">Продать срочно</a>
-          </Button>
-        </div>
-
-        {/* Колонка 3 — Типичная ситуация */}
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-7 space-y-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
-              <MessageCircle className="h-6 w-6" />
-            </div>
-            <h4 className="font-heading text-lg font-bold">Типичная ситуация</h4>
-          </div>
-          <blockquote className="border-l-4 border-red-500 pl-4 text-sm italic text-muted-foreground">
-            «Хочу сменить машину на что-то посвежее, но не готов месяцами возиться с объявлениями и звонками»
-          </blockquote>
-          <p className="text-sm text-muted-foreground">
-            Если вы узнали себя — просто позвоните. Мы приедем, посмотрим машину и назовём реальную цену.
-            Дальше — ваше решение.
-          </p>
-          <div className="rounded-xl bg-red-500/5 border border-red-500/10 p-4 text-sm">
-            <p className="font-medium text-red-500 mb-2">Что делаем мы:</p>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-                <span>Приезжаем сами — в удобное для вас время</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-                <span>Оцениваем честно, без «сбивания» цены на месте</span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-                <span>Оформляем договор и отдаём деньги сразу</span>
-              </li>
-            </ul>
-          </div>
-          <Button size="sm" variant="outline" className="w-full border-red-500/30 text-red-500 hover:bg-red-500/10" asChild>
-            <a href="#callback">Обсудить мою ситуацию</a>
-          </Button>
         </div>
       </div>
     </div>
 
-    {/* Разделитель */}
-    <div className="border-t border-border" />
-
-    {/* ОБЪЕДИНЁННЫЙ БЛОК: Почему выбирают нас (слева) + Как проходит выкуп (справа) */}
-    <div className="grid gap-10 lg:gap-14 lg:grid-cols-2 items-start">
-
-      {/* ЛЕВАЯ КОЛОНКА — Почему выбирают нас */}
-      <div className="space-y-6">
-        <div className="space-y-3">
-          <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-            Почему мы
+    {/* ===== КАК ПРОХОДИТ ВЫКУП — HORIZONTAL STEPPER ===== */}
+    <div id="stages" className="scroll-mt-24">
+      <div className="flex items-baseline justify-between mb-10 md:mb-16">
+        <div>
+          <span className="block text-[11px] uppercase tracking-[0.3em] text-red-500 font-semibold mb-4">
+            ● Простая схема
           </span>
-          <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
-            Почему выбирают нас
-          </h3>
-          <p className="text-sm md:text-base text-muted-foreground">
-            Продавать машину можно по-разному, но с нами это всегда{" "}
-            <span className="text-red-500 font-medium">быстро, честно и удобно</span>.
-          </p>
-        </div>
-
-        <p className="text-sm md:text-base text-muted-foreground">
-          Мы занимаемся выкупом автомобилей в Нижнем Новгороде и Нижегородской области более 10 лет.
-          Наша задача — сделать сделку простой и безопасной: без давления, скрытых условий и лишней беготни.
-        </p>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-              <Zap className="h-5 w-5" />
-            </div>
-            <h4 className="font-semibold text-sm">Быстрая оценка онлайн</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Оставьте заявку — и уже через пять минут узнаете предварительную цену своего автомобиля.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-              <FileCheck className="h-5 w-5" />
-            </div>
-            <h4 className="font-semibold text-sm">Сделка под ключ</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Наши юристы подготовят все документы и оформят продажу строго по закону — без лишних для вас хлопот.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-              <Car className="h-5 w-5" />
-            </div>
-            <h4 className="font-semibold text-sm">Любые авто, любое состояние</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Выкупаем машины любых марок и моделей, годов выпуска и пробега — даже после ДТП или без ПТС.
-            </p>
-          </div>
-
-          <div className="rounded-xl border border-border bg-card p-4 space-y-2 transition-all duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-sm">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
-              <Wallet className="h-5 w-5" />
-            </div>
-            <h4 className="font-semibold text-sm">Деньги сразу на руки</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Сразу после подписания договора вы получаете всю сумму наличными или переводом на карту.
-            </p>
-          </div>
-        </div>
-
-        {/* Мини-блок «Какие авто выкупаем» */}
-        <div className="rounded-2xl border border-border bg-card p-5 space-y-4">
-          <h4 className="font-heading text-base font-bold">Какие авто мы выкупаем?</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Целые и в отличном состоянии (дороже всех)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>После ДТП, битые, не на ходу (сами заберем на эвакуаторе)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>В залоге, кредите или под арестом (закроем долг сами)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Коммерческий транспорт, спецтехнику и минивэны</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-500" />
-              <span>Без ПТС, с ограничениями и любым пробегом</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* ПРАВАЯ КОЛОНКА — Как проходит выкуп (2×2) */}
-      <div id="stages" className="space-y-6 scroll-mt-24">
-        <div className="space-y-3">
-          <span className="inline-flex items-center rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-500 border border-red-500/20">
-            Простая схема
-          </span>
-          <h3 className="font-heading text-xl md:text-2xl font-bold tracking-tight">
+          <h3 className="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-[1.05]">
             Как проходит выкуп
           </h3>
-          <p className="text-sm md:text-base text-muted-foreground">
-            Всего 4 простых шага от первого контакта до получения денег за ваш автомобиль.
-          </p>
         </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {/* Шаг 1 — Заявка */}
-          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
-                <Headset className="h-5 w-5" />
-              </div>
-              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
-                01
-              </span>
-            </div>
-            <h4 className="font-heading text-base font-bold mb-1.5">Заявка</h4>
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-              Звонок, WhatsApp или удобная форма на нашем сайте. Мы на связи круглосуточно.
-            </p>
-          </div>
-
-          {/* Шаг 2 — Осмотр */}
-          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
-                <Eye className="h-5 w-5" />
-              </div>
-              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
-                02
-              </span>
-            </div>
-            <h4 className="font-heading text-base font-bold mb-1.5">Осмотр</h4>
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-              Бесплатный выезд эксперта-оценщика в удобное для вас место и время.
-            </p>
-          </div>
-
-          {/* Шаг 3 — Оценка и цена */}
-          <div className="group relative bg-card border border-border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/40 hover:shadow-lg hover:shadow-red-500/5">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-500/10 text-red-500 transition-all duration-300 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110">
-                <TrendingUp className="h-5 w-5" />
-              </div>
-              <span className="font-heading text-4xl font-black text-red-500/10 group-hover:text-red-500/25 transition-colors leading-none">
-                03
-              </span>
-            </div>
-            <h4 className="font-heading text-base font-bold mb-1.5">Оценка и цена</h4>
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-              Быстрый анализ текущего рынка и формирование лучшей стоимости за авто.
-            </p>
-          </div>
-
-          {/* Шаг 4 — Договор и деньги (акцентный) */}
-          <div className="group relative bg-gradient-to-br from-red-500 to-red-600 text-white rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-red-500/25 overflow-hidden">
-            <div
-              className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.15),transparent_60%)]"
-              aria-hidden="true"
-            />
-            <div className="relative">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
-                  <Handshake className="h-5 w-5" />
-                </div>
-                <span className="font-heading text-4xl font-black text-white/20 leading-none">
-                  04
-                </span>
-              </div>
-              <h4 className="font-heading text-base font-bold mb-1.5">Договор + деньги</h4>
-              <p className="text-xs md:text-sm text-white/90 leading-relaxed">
-                Оформляем официальные документы на месте, оплата наличными или моментальный перевод.
-              </p>
-            </div>
-          </div>
-        </div>
+        <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground hidden md:block">
+          4 шага
+        </span>
       </div>
 
+      <div className="relative">
+        {/* Соединительная линия (desktop) */}
+        <div
+          className="hidden md:block absolute top-6 left-0 right-0 h-px bg-border"
+          aria-hidden="true"
+        />
+
+        <div className="grid gap-10 md:gap-6 md:grid-cols-4">
+          {[
+            { n: "01", t: "Заявка", d: "Звонок, WhatsApp или форма на сайте. Мы на связи круглосуточно." },
+            { n: "02", t: "Осмотр", d: "Бесплатный выезд эксперта-оценщика в удобное место и время." },
+            { n: "03", t: "Оценка", d: "Быстрый анализ рынка и формирование лучшей стоимости за авто." },
+            { n: "04", t: "Договор и деньги", d: "Оформляем документы на месте, оплата наличными или переводом.", accent: true },
+          ].map((step, i) => (
+            <div key={i} className="relative">
+              <div
+                className={`relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-full font-heading text-base font-bold ${
+                  step.accent
+                    ? "bg-red-500 text-white shadow-lg shadow-red-500/30"
+                    : "bg-background border-2 border-border"
+                }`}
+              >
+                {step.n}
+              </div>
+              <h4 className="font-heading text-lg md:text-xl font-bold mb-2">
+                {step.t}
+              </h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {step.d}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
 
   </div>
@@ -1088,7 +996,7 @@ function Index() {
 
       <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-tight">
         Узнайте реальную цену своего авто{" "}
-        <span className="text-red-500">за 5 минут</span>
+        <span className="text-rose-500">за 5 минут</span>
       </h2>
 
       <p className="text-muted-foreground text-base">
@@ -1103,7 +1011,7 @@ function Index() {
           { icon: Wallet, text: "Оценка и выезд — бесплатно" },
         ].map((item, i) => (
           <li key={i} className="flex items-center gap-3">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-rose-500">
               <item.icon className="h-4.5 w-4.5" />
             </span>
             <span className="text-sm font-medium">{item.text}</span>
@@ -1131,7 +1039,7 @@ function Index() {
         {/* Марка и модель */}
         <div className="space-y-2">
           <label htmlFor="carModel" className="text-sm font-medium flex items-center gap-1.5">
-            <Car className="h-3.5 w-3.5 text-red-500" />
+            <Car className="h-3.5 w-3.5 text-rose-500" />
             Марка и модель
           </label>
           <Input
@@ -1148,7 +1056,7 @@ function Index() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label htmlFor="carYear" className="text-sm font-medium flex items-center gap-1.5">
-              <FileCheck className="h-3.5 w-3.5 text-red-500" />
+              <FileCheck className="h-3.5 w-3.5 text-rose-500" />
               Год выпуска
             </label>
             <Input
@@ -1163,7 +1071,7 @@ function Index() {
 
           <div className="space-y-2">
             <label htmlFor="phone" className="text-sm font-medium flex items-center gap-1.5">
-              <PhoneCall className="h-3.5 w-3.5 text-red-500" />
+              <PhoneCall className="h-3.5 w-3.5 text-rose-500" />
               Телефон
             </label>
             <Input
@@ -1224,8 +1132,8 @@ function Index() {
           </div>
           <div className="text-sm space-y-2">
             <p className="font-semibold mb-2">Контакты</p>
-            <a href="tel:+79221882530" className="block text-muted-foreground hover:text-red-500">+7 (922) 188-25-30</a>
-            <a href="mailto:auto.a11iance@yandex.ru" className="block text-muted-foreground hover:text-red-500">auto.a11iance@yandex.ru</a>
+            <a href="tel:+79221882530" className="block text-muted-foreground hover:text-rose-500">+7 (922) 188-25-30</a>
+            <a href="mailto:auto.a11iance@yandex.ru" className="block text-muted-foreground hover:text-rose-500">auto.a11iance@yandex.ru</a>
             <p className="text-muted-foreground">Нижний Новгород, ул. Малышева, 51</p>
           </div>
           <div className="text-sm space-y-2">
@@ -1271,7 +1179,7 @@ function Index() {
       {/* Плавающая кнопка звонка */}
       <a
         href="tel:+79221882530"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-500 hover:bg-red-600 text-white shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 animate-pulse"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 text-white shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 animate-pulse"
         title="Позвонить нам"
       >
         <PhoneCall className="h-6 w-6 text-white" />
