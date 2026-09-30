@@ -15,5 +15,5 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   // Заменяем "./" на точное имя репозитория, чтобы роутинг TanStack и ассеты работали без ошибок на GitHub Pages
-  base: "/", 
+  base: "/avtovykup/", 
 });
