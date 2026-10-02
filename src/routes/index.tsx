@@ -459,19 +459,19 @@ function Index() {
     {/* Контакты и иконки */}
     <div className="flex items-center gap-2">
       <a
-        href="tel:+79221882530"
+        href="tel:+79202530110"
         className="hidden md:flex flex-col items-end leading-tight mr-1"
       >
         <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
           Звоните сейчас
         </span>
         <span className="text-sm font-bold hover:text-rose-500 transition-colors whitespace-nowrap">
-          +7 (922) 188-25-30
+          +7 (920) 253-01-10
         </span>
       </a>
 
       <a
-        href="https://t.me/+79221882530"
+        href="https://t.me/+79202530110"
         target="_blank"
         rel="noopener noreferrer"
         title="Telegram"
@@ -483,7 +483,7 @@ function Index() {
       </a>
 
       <a
-        href="https://max.app/call/+79221882530"
+        href="https://max.app/call/+79202530110"
         target="_blank"
         rel="noopener noreferrer"
         title="Макс"
@@ -1135,7 +1135,7 @@ function Index() {
           </div>
           <div className="text-sm space-y-2">
             <p className="font-semibold mb-2">Контакты</p>
-            <a href="tel:+79221882530" className="block text-muted-foreground hover:text-rose-500">+7 (922) 188-25-30</a>
+            <a href="tel:+79202530110" className="block text-muted-foreground hover:text-rose-500">+7 (922) 188-25-30</a>
             <a href="mailto:auto.a11iance@yandex.ru" className="block text-muted-foreground hover:text-rose-500">auto.a11iance@yandex.ru</a>
             <p className="text-muted-foreground">Нижний Новгород, ул. Малышева, 51</p>
           </div>
@@ -1181,7 +1181,7 @@ function Index() {
 
       {/* Плавающая кнопка звонка */}
       <a
-        href="tel:+79221882530"
+        href="tel:+79202530110"
         className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 text-white shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 animate-pulse"
         title="Позвонить нам"
       >
