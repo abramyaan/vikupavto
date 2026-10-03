@@ -418,7 +418,7 @@ function Index() {
     <div className="flex items-center gap-6 text-muted-foreground">
       <span className="flex items-center gap-1.5">
         <MapPin className="h-3.5 w-3.5 text-rose-500" />
-        Нижний Новогород, ул. Малышева, 51
+        Нижний Новогород
       </span>
       <span className="flex items-center gap-1.5">
         <ShieldCheck className="h-3.5 w-3.5 text-rose-500" />
@@ -1139,7 +1139,7 @@ function Index() {
             <p className="font-semibold mb-2">Контакты</p>
             <a href="tel:+79202530110" className="block text-muted-foreground hover:text-rose-500">+7 (922) 188-25-30</a>
             <a href="mailto:auto.a11iance@yandex.ru" className="block text-muted-foreground hover:text-rose-500">auto.a11iance@yandex.ru</a>
-            <p className="text-muted-foreground">Нижний Новгород, ул. Малышева, 51</p>
+            <p className="text-muted-foreground">Нижний Новгород</p>
           </div>
           <div className="text-sm space-y-2">
             <p className="font-semibold mb-2">Режим работы</p>
