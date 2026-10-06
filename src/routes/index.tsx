@@ -384,10 +384,10 @@ function Index() {
 
     emailjs
       .send(
-        "service_1f0rik7",
-        "template_0xsn60e",
+        "service_gzftjqn",
+        "template_j4v62ea",
         templateParams,
-        "7krMmgLWMid3DqKU1"
+        "58NAThdw2_tFl57wC"
       )
       .then(
         (response) => {
