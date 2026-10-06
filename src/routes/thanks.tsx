@@ -27,10 +27,13 @@ function Thanks() {
 
         <div className="pt-4 border-t border-border space-y-3 text-xs text-muted-foreground">
           <p>Режим работы: Круглосуточно 24/7</p>
-          <p>Телефон для срочной связи: <a href="tel:+79221882530" className="font-bold text-foreground hover:text-primary">+7 (922) 188-25-30</a></p>
+          <p>Телефон для срочной связи: <a href="tel:+79302950152" className="font-bold text-foreground hover:text-primary">+7 (930) 295-01-52</a></p>
         </div>
 
-        <Button className="w-full h-11 gap-2" asChild>
+        <Button
+          className="w-full h-11 gap-2 bg-rose-500 hover:bg-rose-600 text-white"
+          asChild
+        >
           <Link to="/">
             <Home className="h-4 w-4" />
             Вернуться на главную
