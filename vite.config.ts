@@ -11,9 +11,8 @@ export default defineConfig({
       generatedRouteTree: "./src/routeTree.gen.ts",
     }),
     react(),
-    tailwindcss(), // Этот плагин активирует Tailwind v4 в Vite
+    tailwindcss(),
     tsconfigPaths(),
   ],
-  // Заменяем "./" на точное имя репозитория, чтобы роутинг TanStack и ассеты работали без ошибок на GitHub Pages
-  base: "/vikupavto/", 
+  base: "/",
 });
