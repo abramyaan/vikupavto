@@ -494,13 +494,13 @@ function Index() {
   </svg>
 </a>
 <a
-        href="https://max.app/call/+79302950152"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Макс"
-        className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#6B4EFF]/10 hover:bg-[#6B4EFF]/20 text-[#6B4EFF] transition-colors"
-      >
-        <img src={max} alt="Макс" className="h-5 w-5 object-contain" />
+  href="https://max.ru/u/f9LHodD0cOJOouupwDqiYxWNePnGcyRXkEmvqA0C6c7YJ8CGjDElJ0kUt9w"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="Макс"
+  className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#6B4EFF]/10 hover:bg-[#6B4EFF]/20 text-[#6B4EFF] transition-colors"
+>
+  <img src={max} alt="Макс" className="h-5 w-5 object-contain" />
 </a>
       <Button
         size="sm"
